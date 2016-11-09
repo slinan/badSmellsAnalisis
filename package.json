@@ -1,0 +1,31 @@
+{
+  "name": "sonidoslibres",
+  "version": "1.0.0",
+  "description": "[ ![Codeship Status for UAMISO4101/borderlandsoft201620](https://codeship.com/projects/a4929710-8204-0134-53cf-2ebb60898159/status?branch=development)](https://codeship.com/projects/182369)",
+  "main": "index.js",
+  "engines": {
+    "node": "4.6.0"
+  },
+  "scripts": {
+    "postinstall": "bower install && grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BorderlandSoft/SonidosLibres.git"
+  },
+  "author": "Jorge Castro",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/BorderlandSoft/SonidosLibres/issues"
+  },
+  "homepage": "https://github.com/BorderlandSoft/SonidosLibres#readme",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "devDependencies": {}
+}

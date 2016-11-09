@@ -1,0 +1,1 @@
+web: gunicorn SonidosLibres.wsgi --log-file -

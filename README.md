@@ -1,1 +1,0 @@
-# badSmellsAnalisis

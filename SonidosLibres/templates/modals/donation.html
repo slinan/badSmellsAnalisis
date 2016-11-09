@@ -1,0 +1,75 @@
+<div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-3">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Donación a Daft Punk</h4>
+            </div>
+            <div class="modal-body">
+                <form id="donation_form" action="{% url 'donation'%}" method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Valor" name="value">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="credit_card" placeholder="Tarjeta de Crédito">
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="cvc" placeholder="CVC">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <select class="form-control" name="month_dd">
+                                <option>Mes</option>
+                                <option>Enero</option>
+                                <option>Febrero</option>
+                                <option>Marzo</option>
+                                <option>Abril</option>
+                                <option>Mayo</option>
+                                <option>Junio</option>
+                                <option>Julio</option>
+                                <option>Agosto</option>
+                                <option>Septiembre</option>
+                                <option>Octubre</option>
+                                <option>Noviembre</option>
+                                <option>Diciembre</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-5">
+                            <select class="form-control" name="year_dd">
+                                <option>Año</option>
+                                <option >2016</option>
+                                <option >2017</option>
+                                <option >2018</option>
+                                <option >2019</option>
+                                <option >2020</option>
+                                <option >2021</option>
+                                <option >2022</option>
+                                <option >2023</option>
+                                <option >2024</option>
+                                <option >2025</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="hidden" name="artist_to_donation" value="{{ artist.id }}">
+                </form>
+            </div>
+            <div class="modal-footer bg-3">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" form="donation_form" class="btn btn-sonidoslibres btn-3">Hacer donación</button>
+            </div>
+        </div>
+    </div>
+</div>

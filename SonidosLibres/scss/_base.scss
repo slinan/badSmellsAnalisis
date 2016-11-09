@@ -1,0 +1,302 @@
+@import "variables";
+@import "mixins";
+
+//noinspection CssUnknownTarget
+html, body{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F2F4F5;
+  height: 100%;
+}
+.cc {
+   min-height:100%;
+   position:relative;
+}
+.body{
+  padding-bottom: 100px;
+  font-size: 100%;
+}
+a{
+  transition: all .2s linear;
+  &, &:hover, &:focus{
+    color: $color-main1;
+  }
+}
+h2{
+  margin-top: 0;
+}
+h3{
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+h4{
+  line-height: 1.2;
+}
+textarea{
+  &.no-resizable{
+    resize: none;
+  }
+}
+
+.auth-form{
+  > div{
+    margin-top: 120px;
+  }
+}
+
+.main-pic{
+  margin-top: -52px;
+  width: 100%;
+  background-size: cover;
+
+  &.homepage-pic{
+    position: relative;
+    height: 900px;
+    background: url(../img/photos/01.jpg) center;
+  }
+
+  &.register-pic{
+    background: url(../img/photos/02.jpg);
+    background-size: cover;
+  }
+
+  &.login-pic{
+    background: url(../img/photos/03.jpg);
+    background-size: cover;
+  }
+}
+
+.titles-container{
+  padding-top: 215px;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 900px;
+}
+.super-title1{
+  color: white;
+  font-size: 48px;
+
+  //font-weight: 300;
+}
+
+.super-title2 {
+  color: white;
+  font-size: 26px;
+  padding-top: 148px;
+  font-weight: 400;
+}
+
+.btn-join{
+  margin-top: 90px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.chevron-down{
+  color: #d2d2d2;
+  position: absolute;
+  bottom: 5px;
+  font-size: 36px;
+}
+
+
+
+
+
+
+.box{
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &.box-transparent{
+    background: rgba(255, 255, 255, 0.8);
+
+    .form-control{
+      background-color: rgba(255, 255, 255, 0.5);
+      @include placeholder-color(#777);
+    }
+  }
+}
+
+.media-body {
+  > h4{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    > a{
+      color: black;
+    }
+    margin-top: 4px;
+  }
+}
+
+.circle{
+  border-radius: 100px;
+}
+
+.text-divider{
+  margin-top: 9px;
+  //background: #fff;
+
+  span{
+    width: 40px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.62);
+  }
+
+  hr{
+    margin-top: -9px;
+    border-top: 1px solid #cfcfcf;
+  }
+}
+
+.content-header {
+  a {
+    color: #fff;
+    &.user{
+      &:hover, &:focus{
+        color: lighten($color-main3,10%);
+      }
+    }
+  }
+  color: #fff;
+  padding: 30px 40px 20px 40px;
+
+  @mixin header($bg-color, $color){
+    background: $bg-color url(//static.tutsplus.com/assets/tiled-bg@2x-d9d12c3df5f8d062a3219ff99361021c.png);
+    border-bottom: 10px $color solid;
+  }
+
+  @include header(#2a3745, $color-main1);
+
+  &.h-2{
+    @include header($color-bg-2, $color-main2);
+  }
+  &.h-3{
+    @include header($color-bg-3, $color-main3);
+  }
+  &.h-4{
+    @include header($color-bg-4, $color-main4);
+  }
+}
+
+.audio-player{
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.rating-input{
+  font-size: 20px;
+  i{
+    margin-left: 8px;
+  }
+}
+
+.col-song-img{
+  width: 200px;
+  @media (max-width: 720px){
+    width: 200px;
+  }
+}
+
+.song-metadata{
+  margin-top: 7px;
+  > div{
+    display: inline-block;
+    margin-left: 20px;
+    &:first-child{
+      margin-left: 0;
+    }
+
+  }
+}
+
+.artist-info{
+  margin-top: 15px;
+}
+
+.bg-sonidoslibres{
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  &.bg-artist{
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+  &.bg-2{
+    background-color: $color-main2;
+  }
+  &.bg-3{
+    background-color: $color-main3;
+  }
+  &.bg-4{
+    background-color: $color-main4;
+  }
+}
+
+.song-title{
+  font-size: 30px;
+}
+
+.details-box{
+  padding: 5px;
+}
+
+.table-album{
+  >thead>tr>th{
+    //border-bottom: 2px solid $color-main4;
+  }
+  .cell-song a{
+    color: $color-main2;
+    font-weight: 600;
+  }
+  .cell-user a{
+    color: $color-main3;
+  }
+
+  > tbody > tr > td.td-remove {
+    padding: 2px 0 0;
+
+    .btn-remove{
+      padding: 0;
+      font-size: 20px;
+      color: #6ba2a0;
+
+      &:hover, &:focus{
+        color: $color-error;
+      }
+    }
+  }
+}
+
+.btn-group-user{
+  margin-left: 10px;
+}
+
+.date-comment{
+  color: $color-main1;
+  margin-top: 5px;
+}
+
+.artist-detail-title{
+  a {
+    font-weight: 600;
+    color: black;
+    display: block;
+  }
+
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  padding-top: 10px;
+  background: #232D32 url(../img/music-pattern3.png);
+}

@@ -1,0 +1,57 @@
+{% load static %}
+<div class="modal fade" id="{{ id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-2">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">{{ title }}</h4>
+            </div>
+            <div class="modal-body">
+                <form id="audio_upload_form" action="{% url 'upload-song'%}" method="POST" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group input-group">
+                        <label class="input-group-btn">
+                            <span class="btn btn-sonidoslibres btn-2 btn-file">
+                                Seleccionar audio&hellip; <input type="file" name="upload_song_file_file" style="display: none;">
+                            </span>
+                        </label>
+                        <input type="text" class="form-control" name="upload_song_file">
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <div class="form-group input-group">
+                                    <img id="upload_img_file" class="detail-img si200" src="http://hypnotherapista.com/wp/wp-content/plugins/ldd-directory-lite/public/images/noimage.png">
+                                <label class="btn btn-block btn-sonidoslibres btn-2 btn-file">
+                                    Agregar imágen&hellip; <input type="file" name="upload_song_img_file" style="display: none;" onchange="document.getElementById('upload_img_file').src = window.URL.createObjectURL(this.files[0])">
+                                </label>
+                                <input type="text" class="form-control" name="upload_song_img">
+                             </div>
+                        </div>
+                        <div class="media-body">
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nombre" name="upload_song_name">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="upload_song_type">
+                                    <option>Seleccione un tipo...</option>
+                                    <option>Videojuegos</option>
+                                    <option>Banda sonora</option>
+                                    <option>Sonidos ambientales</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Etiquetas (Separadas por comas)" name="upload_song_tags"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer bg-2">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" form="audio_upload_form" class="btn btn-sonidoslibres btn-2">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
